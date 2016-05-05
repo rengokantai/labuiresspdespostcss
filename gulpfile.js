@@ -13,7 +13,7 @@ var gulp = require('gulp'),
     source = 'process/css/',
     dest = 'builds/postcss/';
 
-gulp.task('html', ()=> {
+gulp.task('html', function(){
     gulp.src(dest + '*.html');
 });
 
@@ -29,7 +29,7 @@ gulp.task('css', function() {
         .pipe(gulp.dest(dest + 'css'));
 });
 
-gulp.task('watch', ()=> {
+gulp.task('watch', function() {
     gulp.watch(source + '**/*.css', gulp.series(['css']));
     gulp.watch(dest + '**/*.html', gulp.series(['html']));
 });
